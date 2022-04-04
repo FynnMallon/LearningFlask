@@ -58,7 +58,7 @@ html{
     text-align: right;
     padding-right: 25px;
 }
-.form-log-in-with-email .form-row > label span{
+.form-log-in-with-email .form-row > a{
     display: inline-block;
     box-sizing: border-box;
     color:  #5f5f5f;

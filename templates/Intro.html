@@ -27,14 +27,19 @@
                         <h1>Learning Flask</h1>
                     </div>
                     <div class="form-row">
-                            <button action="//Login">Login</button>
+                        <a href="{{ url_for('Login') }}">
+                            <button class="button" type="button" role="button">Login</button>
+                        </a>
                     </div>
                     <div class="form-row">
-                            <button OnCLick="/signup">Sign Up</button>
+                            <a href="{{ url_for('Signup') }}">
+                                <button class="button" type="button" role="button">Singup</button>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
-            </div>
+            </div>r
 
         </form>
 
