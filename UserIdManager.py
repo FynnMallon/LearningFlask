@@ -2,6 +2,7 @@
 from ast import Pass
 from flask import Flask, render_template
 import hashlib
+import json
 # from flask import request
 # import flask
 # from markupsafe import escape
@@ -27,6 +28,12 @@ def get(name,password):
         return(id)
     if id == None:
         return(UserExists)
+
+def getName(ID):
+    db = firestore.client()
+    query = ((db.collection(u'users').document(ID)).get()).to_dict()
+    email = query['Email']
+    return(email)
 
 def add(username, password):
     password = encrypt(password)
