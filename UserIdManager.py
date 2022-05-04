@@ -14,7 +14,7 @@ from firebase_admin import firestore
 cred = credentials.Certificate('learningflask-8db3e-firebase-adminsdk-2qh4b-08af089550.json')
 firebase_admin.initialize_app(cred, {'projectId': 'learningflask-8db3e',})
 
-def get(name,password):
+def get(name,password): #Used for Login
     password = encrypt(password)
     name = name.lower()
     id = None
@@ -25,6 +25,18 @@ def get(name,password):
         Password = entry.get(u'Password')
         if password ==Password:
             id = entry.id
+        return(id)
+    if id == None:
+        return(UserExists)
+
+def getID(name): #Used for Friends
+    name = name.lower()
+    id = None
+    db = firestore.client()
+    UserExists = False
+    query = db.collection(u'users').where(u'Email',u'==',name).stream()
+    for entry in query:
+        id = entry.id
         return(id)
     if id == None:
         return(UserExists)

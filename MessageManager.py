@@ -41,7 +41,7 @@ def GetMessages(UserId, PartnerId):
 # print(GetMessages("OUlomzNvGv3W5BKdU3WL","IYKuHOyNcdjsCrKV7yDg"))
 
 #Structure of Messages
-#Each User has a folder for every user they have sent a message to
+#Each User has a folder for every user they recieved a message from
 #If sending to new user, adds folder to both profile
 #Checks messages on refresh 
 #Recieved messages added to own profile
